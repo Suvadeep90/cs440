@@ -1,0 +1,64 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Welcome!</title>
+</head>
+
+
+<!DOCTYPE html>
+<html>
+<title>History Arcade</title>
+<head>
+    <!-- <link type="text/css" rel="stylesheet" href="css/index.css" /> -->
+</head>
+<body>
+
+<!--
+<div class="background-wrap">
+    <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
+        <source src="https://www.dropbox.com/s/dcphncbae1vmblz/video.mp4?dl=1" type="video/mp4">
+        Video not supported
+    </video>
+</div>
+-->
+
+<a href="testlogin.html">Go to Login Test page</a>
+
+<div class="header">
+    <div id="logo" class="header" ><img src="logo.gif" /></div>
+    <form action="login.jsp" method="post">
+        <div id="loginusername" class="header">
+            <td>Username</td>
+            <td><input type="text" name="username" required/></td>
+        </div>
+        <div id="loginpassword" class="header">
+            <td>Password</td>
+            <td><input type="password" name="password" required/></td></div>
+    </form>
+    <input type="submit" value="Login" />
+</div>
+<input type="submit" class="submit1" value="Take me in"/>
+
+<div class="bodyx">
+    <div id="signup-req" class="bodyx">Create an account</div>
+    <div id="signup-space" class="bodyx">
+        <form action="register.jsp" method="post">
+            <input placeholder="First name" type="text" id="namebox" name="firstname" required/>
+            <input placeholder="Last name" type="text" id="namebox" name="lastname" required/></br>
+            <div id="space"/>
+            <input placeholder="Email" type="text" id="mailbox" name="email" required/></br>
+            <div id="space"/>
+            <input placeholder="Username" type="text" id="mailbox" name="username" required/></br>
+            <div id="space"/>
+            <input placeholder="Password" type="password" id="mailbox" name="password" required/></br>
+            <div id="space"/>
+            <input type="radio" name="sex" value="male" required/>Male
+            <input type="radio" name="sex" value="female" required/>Female</br>
+        </form>
+    </div>
+</div>
+<input type="submit" class="submit2" value="Sign up!"/>
+</body>
+</html>

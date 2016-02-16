@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="History Arcade:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/History_Arcade_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="History Arcade/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="History Arcade" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

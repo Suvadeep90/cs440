@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="HADB" uuid="86888fef-dbea-4bff-be3b-6f3fb2d0e0a9">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>HADB.*</schema-pattern>
+      <default-schemas>HADB.*</default-schemas>
+    </data-source>
+  </component>
+</project>

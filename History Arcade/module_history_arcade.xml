@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_history_arcade" default="compile.module.history_arcade">
+  <dirname property="module.history_arcade.basedir" file="${ant.file.module_history_arcade}"/>
+  
+  <property name="module.jdk.home.history_arcade" value="${jdk.home.1.8}"/>
+  <property name="module.jdk.bin.history_arcade" value="${jdk.bin.1.8}"/>
+  <property name="module.jdk.classpath.history_arcade" value="jdk.classpath.1.8"/>
+  
+  <property name="compiler.args.history_arcade" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="history_arcade.output.dir" value="${module.history_arcade.basedir}/out/production/History Arcade"/>
+  <property name="history_arcade.testoutput.dir" value="${module.history_arcade.basedir}/out/test/History Arcade"/>
+  
+  <path id="history_arcade.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="history_arcade.module.production.classpath">
+    <path refid="${module.jdk.classpath.history_arcade}"/>
+  </path>
+  
+  <path id="history_arcade.runtime.production.module.classpath">
+    <pathelement location="${history_arcade.output.dir}"/>
+  </path>
+  
+  <path id="history_arcade.module.classpath">
+    <path refid="${module.jdk.classpath.history_arcade}"/>
+    <pathelement location="${history_arcade.output.dir}"/>
+  </path>
+  
+  <path id="history_arcade.runtime.module.classpath">
+    <pathelement location="${history_arcade.testoutput.dir}"/>
+    <pathelement location="${history_arcade.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.history_arcade">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.history_arcade">
+    <patternset refid="excluded.from.module.history_arcade"/>
+  </patternset>
+  
+  <path id="history_arcade.module.sourcepath">
+    <dirset dir="${module.history_arcade.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.history_arcade" depends="compile.module.history_arcade.production,compile.module.history_arcade.tests" description="Compile module History Arcade"/>
+  
+  <target name="compile.module.history_arcade.production" depends="register.custom.compilers" description="Compile module History Arcade; production classes">
+    <mkdir dir="${history_arcade.output.dir}"/>
+    <javac2 destdir="${history_arcade.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.history_arcade}/javac">
+      <compilerarg line="${compiler.args.history_arcade}"/>
+      <bootclasspath refid="history_arcade.module.bootclasspath"/>
+      <classpath refid="history_arcade.module.production.classpath"/>
+      <src refid="history_arcade.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.history_arcade"/>
+    </javac2>
+    
+    <copy todir="${history_arcade.output.dir}">
+      <fileset dir="${module.history_arcade.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.history_arcade.tests" depends="register.custom.compilers,compile.module.history_arcade.production" description="compile module History Arcade; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.history_arcade" description="cleanup module">
+    <delete dir="${history_arcade.output.dir}"/>
+    <delete dir="${history_arcade.testoutput.dir}"/>
+  </target>
+</project>
